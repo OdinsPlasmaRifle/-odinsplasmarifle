@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>{{ .Page.Title }}{{ if (ne .Page.Title .Site.Title) }} | {{ .Site.Title }}{{ end }}</title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+		{{ $normalize := resources.Get "css/normalize.css" }}
+		{{ $skeleton := resources.Get "css/skeleton.css"  }}
+		{{ $syntax := resources.Get "css/syntax.css"  }}
+		{{ $main := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS  }}
+		{{ $css := slice $normalize $skeleton $syntax $main | resources.Concat "css/bundle.css" | resources.Minify | resources.Fingerprint }}
+		<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+		<link rel="icon" type="{{ .Site.Params.favicon }}" href="{{ .Site.Params.favicon }}">
+	</head>
+	<body>
+		<header>
+			<nav class="navbar">
+				<div class="container">
+					<ul class="navbar-list">
+						<li class="navbar-item">
+							<a href="" class="navbar-link">Hello</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<div class="mobile-navbar">
+				<div class="burger-container" onclick="openNav()">
+					<div class="burger"></div>
+					<div class="burger"></div>
+					<div class="burger"></div>
+				</div>
+			</div>
+		</header>
+		<div class="container">
+			<div class="row">
+				<main class="twelve columns">
+					<div class="content">
+						{{ block "main" . }}
+							{{ .Content }}
+						{{ end }}
+					</div>
+				</main>
+			</div>
+		</div>
+	</body>
+</html>
