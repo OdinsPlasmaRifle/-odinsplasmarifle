@@ -1,16 +1,18 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  <article>
-    <ul>
-      {{ range where .Paginator.Pages "Type" "!=" "page" }}
-        <li>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-          <span>
-            {{ .Date.Format "Jan 2, 2006" }}
-          </span>
-        </li>
-      {{ end }}
-    </ul>
-    {{ partial "pagination" . }}
-  </article>
+	<h1>{{ .Title }}</h1>
+	<ul>
+		{{ range where .Paginator.Pages "Type" "!=" "page" }}
+		<li>
+			<a href="{{ .Permalink }}">
+				<article>
+					<h2>{{ .Title }}</h2>
+					<span>
+						{{ .Date.Format "Jan 2, 2006" }}
+					</span>
+				</article>
+			</a>
+		</li>
+		{{ end }}
+	</ul>
+	{{ partial "pagination" . }}
 {{ end }}
