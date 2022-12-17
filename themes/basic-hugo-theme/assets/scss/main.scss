@@ -1,7 +1,7 @@
 $hero: url("{{ .Site.Params.heroImage }}");
 
-$primary: {{ .Site.Params.primaryColor | default "#33C3F0" }};
-$secondary: {{ .Site.Params.secondaryColor | default "#0FA0CE" }};
+$primary: {{ .Site.Params.primaryColor | default "#606585" }};
+$secondary: {{ .Site.Params.secondaryColor | default "#000000" }};
 $warningBoxColor: {{ .Site.Params.warningBoxColor | default "#f5e4f9" }};
 $noticeBoxColor: {{ .Site.Params.noticeBoxColor | default "#dfe5f4" }};
 $lightGray: #eee;
@@ -35,11 +35,11 @@ pre {
 	padding: 1px 2px 1px;
 }
 
-.button.button-primary {
+button.button-primary {
 	background-color: $primary;
 	border-color: $primary;
 }
-.button.button-primary:hover {
+button.button-primary:hover {
 	background-color: $secondary;
 	border-color: $secondary;
 }

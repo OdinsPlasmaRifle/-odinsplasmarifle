@@ -15,5 +15,5 @@ params:
   logoImage: /images/logo.svg
   favicon: /images/favicon.png
 
-  primaryColor: "#5336FF"
-  secondaryColor: "#A4A5F5"
+  primaryColor: "#606585"
+  secondaryColor: "#000000"
