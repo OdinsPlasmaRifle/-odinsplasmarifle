@@ -17,11 +17,36 @@
 	</head>
 	<body>
 		<header>
-
+			<div class="container">
+				<div class="row">
+					<div class="twelve columns">
+						<h2>
+							<a href="">{{ .Site.Title }}</a>
+							<small>Stuff and nonsense.</small>
+						</h2>
+					</div>
+				</div>
+			</div>
 		</header>
-		<div class="container">
+
+		<section class="container">
 			<div class="row">
-				<main class="twelve columns">
+				<nav class="two columns">
+					<img/>
+					<div>
+						About me and stuff
+					</div>
+					<ul>
+						<li>Home</li>
+						<li>About</li>
+						<li>Archive</li>
+					</ul>
+					<ul>
+						<li>Link 1</li>
+						<li>Link 2</li>
+					</ul>
+				</nav>
+				<main class="ten columns">
 					<div class="content">
 						{{ block "main" . }}
 							{{ .Content }}
@@ -29,6 +54,14 @@
 					</div>
 				</main>
 			</div>
-		</div>
+		</section>
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					&copy;2022 {{ .Site.Title }}
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>
