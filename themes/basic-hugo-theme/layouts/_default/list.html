@@ -3,17 +3,17 @@
 	<ul class="posts">
 		{{ range where .Paginator.Pages "Type" "!=" "page" }}
 		<li>
-			<a href="{{ .Permalink }}">
-				<article>
-					<h2>{{ .Title }}</h2>
-					<p>
-						{{ .Date.Format "Jan 2, 2006" }}
-					</p>
-					<p>
-						{{ .Description }}
-					</p>
-				</article>
-			</a>
+			<article>
+				<a href="{{ .Permalink }}">
+					<h3>{{ .Title }}</h3>
+				</a>
+				<p>
+					{{ .Date.Format "Jan 2, 2006" }}
+				</p>
+				<p>
+					{{ .Description }}
+				</p>
+			</article>
 		</li>
 		{{ end }}
 	</ul>

@@ -1,8 +1,8 @@
 ---
 date: 2018-09-17T15:21:22+02:00
-title: Test
-description: Test
+title: Test this thing
+description: Test this thing to see if it works.
 tags: ["test"]
 ---
 
-Test
+Test this is a foxtrot theme to test whether things look decent when tested.

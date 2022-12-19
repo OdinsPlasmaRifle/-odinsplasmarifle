@@ -6,12 +6,15 @@
 		<meta name="description" content="{{ .Site.Params.description }}">
 		<meta name="author" content="{{ .Site.Author.name }}">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 		{{ $normalize := resources.Get "css/normalize.css" }}
 		{{ $skeleton := resources.Get "css/skeleton.css"  }}
 		{{ $syntax := resources.Get "css/syntax.css"  }}
+		{{ $fontawesome := resources.Get "css/fontawesome.css" }}
 		{{ $main := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS  }}
-		{{ $css := slice $normalize $skeleton $syntax $main | resources.Concat "css/bundle.css" | resources.Minify | resources.Fingerprint }}
+		{{ $css := slice $normalize $skeleton $syntax $fontawesome $main | resources.Concat "css/bundle.css" | resources.Minify | resources.Fingerprint }}
 		<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 		<link rel="icon" type="{{ .Site.Params.favicon }}" href="{{ .Site.Params.favicon }}">
 	</head>
@@ -33,24 +36,32 @@
 					<a href="/">
 						<img src="{{ .Site.Params.logoImage }}" alt="{{ .Site.Title }}"/>
 					</a>
-					<p>
-						{{ .Site.Params.about }}
-					</p>
 					<ul class="internal-nav">
 						<li><a href="/">Home</a></li>
-						<li><a href="">About</a></li>
-						<li><a href="">Projects</a></li>
-						<li><a href="">Terms</a></li>
+						<li><a href="/about">About</a></li>
+						<li><a href="/projects">Projects</a></li>
 					</ul>
 					<ul class="external-nav">
 						{{ if .Site.Params.githubLink }}
-						<li><a href="{{ .Site.Params.githubLink }}">Github</a></li>
+						<li>
+							<a href="{{ .Site.Params.githubLink }}">
+								<i class="fa-brands fa-github"></i>
+							</a>
+						</li>
 						{{ end }}
 						{{ if .Site.Params.keybaseLink }}
-						<li><a href="{{ .Site.Params.keybaseLink }}">Keybase</a></li>
+						<li>
+							<a href="{{ .Site.Params.keybaseLink }}">
+								<i class="fa-brands fa-keybase"></i>
+							</a>
+						</li>
 						{{ end }}
 						{{ if .Site.Params.linkedInLink }}
-						<li><a href="{{ .Site.Params.linkedInLink }}">LinkedIn</a></li>
+						<li>
+							<a href="{{ .Site.Params.linkedInLink }}">
+								<i class="fa-brands fa-linkedin"></i>
+							</a>
+						</li>
 						{{ end }}
 					</ul>
 				</nav>

@@ -11,7 +11,7 @@
 	{{ range .Pagers }}
 	<li>
 		<a href="{{ .URL }}">
-			<button class="{{ if eq .PageNumber $.Paginator.PageNumber }}button-primary{{ end }}">
+			<button class="{{ if eq .PageNumber $.Paginator.PageNumber }}active{{ end }}">
 				{{ .PageNumber }}
 			</button>
 		</a>

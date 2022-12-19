@@ -1,4 +1,4 @@
-$hero: url("{{ .Site.Params.heroImage }}");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
 $primary: {{ .Site.Params.primaryColor | default "#606585" }};
 $secondary: {{ .Site.Params.secondaryColor | default "#000000" }};
@@ -7,21 +7,24 @@ $noticeBoxColor: {{ .Site.Params.noticeBoxColor | default "#dfe5f4" }};
 $lightGray: #eee;
 $white: #fff;
 $gray: #666;
-$black: #222;
+$black: #555;
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+}
 
 a {
-	color: $primary;
 	text-decoration: none;
 }
-a:hover {
-	color: $secondary;
-}
-a.heading {
-	color: $black;
-}
-a.heading:hover {
-	color: $secondary;
-}
+// a:hover {
+// 	color: $secondary;
+// }
+// a.heading {
+// 	color: $black;
+// }
+// a.heading:hover {
+// 	color: $secondary;
+// }
 
 pre {
 	border-radius: 4px;
@@ -35,23 +38,31 @@ pre {
 	padding: 1px 2px 1px;
 }
 
-button.button-primary {
-	background-color: $primary;
-	border-color: $primary;
-}
-button.button-primary:hover {
-	background-color: $secondary;
-	border-color: $secondary;
-}
+// button.button-primary {
+// 	background-color: $primary;
+// 	border-color: $primary;
+// }
+// button.button-primary:hover {
+// 	background-color: $secondary;
+// 	border-color: $secondary;
+// }
 
 header {
-	padding: 1.5rem 0 1.5rem 0;
+	padding: 2rem 0 2rem 0;
 
 	h2 {
-		font-size: 40px;
+		font-size: 35px;
+
+		a {
+			color: $black;
+			text-decoration: underline;
+		}
+		a:hover {
+			color: $gray;
+		}
 	}
 	small {
-		font-size: 24px;
+		font-size: 20px;
 	}
 }
 
@@ -77,6 +88,7 @@ nav.sidebar {
 	p {
 		padding: 0 1rem;
 		text-align: right;
+		color: $black;
 	}
 
 	.internal-nav {
@@ -84,15 +96,29 @@ nav.sidebar {
 		font-size: 28px;
 		padding: 0 1rem;
 		text-align: right;
+
+		li a {
+			color: $black;
+		}
+		a:hover {
+			color: $gray;
+		}
 	}
 
 	.external-nav {
 		list-style: none;
 		padding: 0 1rem;
 		text-align: right;
+		font-size: 30px;
 
 		li {
 			display: inline;
+		}
+		li a {
+			color: $black;
+		}
+		a:hover {
+			color: $gray;
 		}
 	}
 }
@@ -112,11 +138,19 @@ main.content {
 		background-color: $noticeBoxColor;
 	}
 
+	ul.pagination {
+		list-style: none;
+	}
 	ul.pagination li {
 		display: inline;
 
 		a button {
+			padding: 0 20px;
 			font-size: 14px;
+		}
+		a button.active {
+			color: $white;
+			background-color: $black;
 		}
 	}
 }
@@ -124,4 +158,15 @@ main.content {
 main.content .posts {
 	list-style: none;
 	padding: 2rem 0;
+
+	article {
+		border-bottom: 1px solid lighten($gray, 50%);
+
+		a {
+			color: $black;
+		}
+		a:hover {
+			color: $gray
+		}
+	}
 }
