@@ -16,51 +16,49 @@
 		<link rel="icon" type="{{ .Site.Params.favicon }}" href="{{ .Site.Params.favicon }}">
 	</head>
 	<body>
-		<header>
-			<div class="container">
-				<div class="row">
-					<div class="twelve columns">
-						<h2>
-							<a href="">{{ .Site.Title }}</a>
-							<small>Stuff and nonsense.</small>
-						</h2>
-					</div>
+		<header class="container">
+			<div class="row">
+				<div class="twelve columns">
+					<h2>
+						<a href="/">{{ .Site.Title }}</a>
+						<small>{{ .Site.Params.description }}</small>
+					</h2>
 				</div>
 			</div>
 		</header>
 
 		<section class="container">
 			<div class="row">
-				<nav class="two columns">
-					<img/>
-					<div>
-						About me and stuff
-					</div>
-					<ul>
-						<li>Home</li>
-						<li>About</li>
-						<li>Archive</li>
+				<nav class="three columns sidebar">
+					<a href="/">
+						<img src="{{ .Site.Params.logoImage }}" alt="Website image"/>
+					</a>
+					<p>
+						{{ .Site.Params.about }}
+					</p>
+					<ul class="internal-nav">
+						<li><a href="/">Home</a></li>
+						<li><a href="">About</a></li>
+						<li><a href="">Projects</a></li>
+						<li><a href="">Terms</a></li>
 					</ul>
-					<ul>
-						<li>Link 1</li>
-						<li>Link 2</li>
+					<ul class="external-nav">
+						<li><a href="{{ .Site.Params.githubLink }}">Github</a></li>
+						<li><a href="{{ .Site.Params.keybaseLink }}">Keybase</a></li>
+						<li><a href="{{ .Site.Params.linkedInLink }}">LinkedIn</a></li>
 					</ul>
 				</nav>
-				<main class="ten columns">
-					<div class="content">
-						{{ block "main" . }}
-							{{ .Content }}
-						{{ end }}
-					</div>
+				<main class="nine columns content">
+					{{ block "main" . }}
+						{{ .Content }}
+					{{ end }}
 				</main>
 			</div>
 		</section>
 
-		<footer>
-			<div class="container">
-				<div class="row">
-					&copy;2022 {{ .Site.Title }}
-				</div>
+		<footer class="container">
+			<div class="row">
+				&copy;{{ dateFormat "2006" now }} {{ .Site.Title }}
 			</div>
 		</footer>
 	</body>

@@ -48,15 +48,15 @@ header {
 	padding: 1.5rem 0 1.5rem 0;
 
 	h2 {
-		font-size: 34px;
+		font-size: 40px;
 	}
 	small {
-		font-size: 20px;
+		font-size: 24px;
 	}
 }
 
 .container {
-	max-width: 1100px;
+	max-width: 1400px;
 }
 
 footer {
@@ -65,8 +65,29 @@ footer {
 	line-height: 4rem;
 }
 
-main .content {
-	padding: 4rem 0;
+nav.sidebar {
+	padding: 2rem 0;
+	margin-bottom: 0;
+
+	img {
+		max-width: 100%;
+	}
+
+	.internal-nav {
+		list-style: none;
+	}
+
+	.external-nav {
+		list-style: none;
+
+		li {
+			display: inline;
+		}
+	}
+}
+
+main.content {
+	padding: 2rem 0;
 	margin-bottom: 0;
 
 	aside {
@@ -87,4 +108,9 @@ main .content {
 			font-size: 14px;
 		}
 	}
+}
+
+main.content .posts {
+	list-style: none;
+	padding: 2rem 0;
 }

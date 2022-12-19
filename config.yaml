@@ -12,8 +12,15 @@ markup:
       unsafe: true
 
 params:
-  logoImage: /images/logo.svg
-  favicon: /images/favicon.png
+  description: Stuff and nonsense.
+  about: About me and stuff
+
+  logoImage: /images/logo.jpg
+  favicon: /images/favicon.jpg
 
   primaryColor: "#606585"
   secondaryColor: "#000000"
+
+  githubLink: https://github.com/OdinsPlasmaRifle
+  keybaseLink: https://keybase.io/odinsplasmarifle
+  linkedInLink: https://www.linkedin.com/in/odinsplasmarifle/
