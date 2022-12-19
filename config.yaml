@@ -1,8 +1,12 @@
 baseURL: "https://odinsplasmarifle.com"
 languageCode: "en-us"
-title: "OdinsPlasmaRifle"
+title: OdinsPlasmaRifle
 theme: basic-hugo-theme
 paginate: 5
+
+author:
+  name: OdinsPlasmaRifle
+  homepage: https://odinsplasmarifle.com
 
 markup:
   highlight:
@@ -12,8 +16,9 @@ markup:
       unsafe: true
 
 params:
+  motto: Stuff and nonsense.
   description: Stuff and nonsense.
-  about: About me and stuff
+  about: About me and stuff.
 
   logoImage: /images/logo.jpg
   favicon: /images/favicon.jpg

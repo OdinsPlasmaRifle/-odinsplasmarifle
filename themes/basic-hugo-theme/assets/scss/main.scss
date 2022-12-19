@@ -56,7 +56,7 @@ header {
 }
 
 .container {
-	max-width: 1400px;
+	max-width: 1200px;
 }
 
 footer {
@@ -66,19 +66,30 @@ footer {
 }
 
 nav.sidebar {
-	padding: 2rem 0;
+	padding: 1rem 0;
 	margin-bottom: 0;
 
 	img {
 		max-width: 100%;
+		padding: 0 1rem;
+	}
+
+	p {
+		padding: 0 1rem;
+		text-align: right;
 	}
 
 	.internal-nav {
 		list-style: none;
+		font-size: 28px;
+		padding: 0 1rem;
+		text-align: right;
 	}
 
 	.external-nav {
 		list-style: none;
+		padding: 0 1rem;
+		text-align: right;
 
 		li {
 			display: inline;
@@ -87,7 +98,7 @@ nav.sidebar {
 }
 
 main.content {
-	padding: 2rem 0;
+	padding: 1rem 0;
 	margin-bottom: 0;
 
 	aside {

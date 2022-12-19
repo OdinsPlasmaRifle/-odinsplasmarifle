@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>{{ .Page.Title }}{{ if (ne .Page.Title .Site.Title) }} | {{ .Site.Title }}{{ end }}</title>
-		<meta name="description" content="">
-		<meta name="author" content="">
+		<meta name="description" content="{{ .Site.Params.description }}">
+		<meta name="author" content="{{ .Site.Author.name }}">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 		{{ $normalize := resources.Get "css/normalize.css" }}
@@ -21,7 +21,7 @@
 				<div class="twelve columns">
 					<h2>
 						<a href="/">{{ .Site.Title }}</a>
-						<small>{{ .Site.Params.description }}</small>
+						<small>{{ .Site.Params.motto }}</small>
 					</h2>
 				</div>
 			</div>
@@ -31,7 +31,7 @@
 			<div class="row">
 				<nav class="three columns sidebar">
 					<a href="/">
-						<img src="{{ .Site.Params.logoImage }}" alt="Website image"/>
+						<img src="{{ .Site.Params.logoImage }}" alt="{{ .Site.Title }}"/>
 					</a>
 					<p>
 						{{ .Site.Params.about }}
@@ -43,9 +43,15 @@
 						<li><a href="">Terms</a></li>
 					</ul>
 					<ul class="external-nav">
+						{{ if .Site.Params.githubLink }}
 						<li><a href="{{ .Site.Params.githubLink }}">Github</a></li>
+						{{ end }}
+						{{ if .Site.Params.keybaseLink }}
 						<li><a href="{{ .Site.Params.keybaseLink }}">Keybase</a></li>
+						{{ end }}
+						{{ if .Site.Params.linkedInLink }}
 						<li><a href="{{ .Site.Params.linkedInLink }}">LinkedIn</a></li>
+						{{ end }}
 					</ul>
 				</nav>
 				<main class="nine columns content">
