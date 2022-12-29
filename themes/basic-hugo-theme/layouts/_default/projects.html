@@ -1,0 +1,21 @@
+{{ define "main" }}
+	<h1>{{ .Title }}</h1>
+	<ul class="posts">
+		{{ range (where .Paginator.Pages "Type" "!=" "page").ByDate.Reverse }}
+		<li>
+			<article>
+				<a href="{{ .Permalink }}">
+					<h3>{{ .Title }}</h3>
+				</a>
+				<p>
+					{{ .Date.Format "Jan 2, 2006" }}
+				</p>
+				<p>
+					{{ .Description }}
+				</p>
+			</article>
+		</li>
+		{{ end }}
+	</ul>
+	{{ partial "pagination" . }}
+{{ end }}
