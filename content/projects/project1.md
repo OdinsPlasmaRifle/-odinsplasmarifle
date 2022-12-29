@@ -1,8 +1,6 @@
 ---
 date: 2011-09-17T15:21:22+02:00
-title: Test 6
-description: Test
+title: Project 1
+description: Project
 tags: ["test"]
 ---
-
-Test

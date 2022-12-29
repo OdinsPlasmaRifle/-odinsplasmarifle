@@ -1,7 +1,7 @@
 {{ define "main" }}
 	<h1>{{ .Title }}</h1>
 	<ul class="posts">
-		{{ range where .Paginator.Pages "Type" "!=" "page" }}
+		{{ range (where .Paginator.Pages "Type" "!=" "page").ByDate.Reverse }}
 		<li>
 			<article>
 				<a href="{{ .Permalink }}">

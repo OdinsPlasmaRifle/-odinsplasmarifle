@@ -1,40 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
-$primary: {{ .Site.Params.primaryColor | default "#606585" }};
-$secondary: {{ .Site.Params.secondaryColor | default "#000000" }};
+$primary: {{ .Site.Params.primaryColor | default "#02ba70" }};
+$secondary: {{ .Site.Params.secondaryColor | default "#63ffb4" }};
 $warningBoxColor: {{ .Site.Params.warningBoxColor | default "#f5e4f9" }};
 $noticeBoxColor: {{ .Site.Params.noticeBoxColor | default "#dfe5f4" }};
-$lightGray: #eee;
 $white: #fff;
 $gray: #666;
-$black: #555;
+$black: #363636;
 
 body {
+	color: $black;
   font-family: 'Fira Sans', sans-serif;
 }
 
 a {
+	color: $primary;
 	text-decoration: none;
 }
-// a:hover {
-// 	color: $secondary;
-// }
-// a.heading {
-// 	color: $black;
-// }
-// a.heading:hover {
-// 	color: $secondary;
-// }
+a:hover {
+	color: $secondary;
+	text-decoration: none;
+}
 
 pre {
 	border-radius: 4px;
 	padding: 1rem;
 }
 
+blockquote {
+	margin: 0 0 2rem 0;
+	padding: 1rem 0rem 1rem 2rem;
+	border-left: 8px solid $primary;
+
+	p {
+		margin: 0;
+		color: $gray;
+	}
+}
+
 :not(pre) > code {
-	border: 1px solid lighten($primary, 28%);
+	border: 1px solid lighten($gray, 28%);
 	border-radius: 3px;
-	background-color: lighten($primary, 38%);
+	background-color: lighten($gray, 50%);
 	padding: 1px 2px 1px;
 }
 
@@ -48,10 +55,9 @@ pre {
 // }
 
 header {
-	padding: 2rem 0 2rem 0;
-
 	h2 {
 		font-size: 35px;
+		padding: 1rem 0 1rem 0;
 
 		a {
 			color: $black;
@@ -59,8 +65,10 @@ header {
 		}
 		a:hover {
 			color: $gray;
+			text-decoration: underline;
 		}
 	}
+
 	small {
 		font-size: 20px;
 	}
