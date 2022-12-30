@@ -16,8 +16,8 @@ markup:
       unsafe: true
 
 params:
-  motto: Stuff and nonsense.
-  description: Stuff and nonsense.
+  tagline: A wild coder appears!
+  description: A wild coder appears!
 
   logoImage: /images/logo.jpg
   favicon: /images/favicon.jpg

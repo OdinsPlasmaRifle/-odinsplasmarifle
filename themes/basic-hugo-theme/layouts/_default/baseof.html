@@ -19,13 +19,15 @@
 		<link rel="icon" type="{{ .Site.Params.favicon }}" href="{{ .Site.Params.favicon }}">
 	</head>
 	<body>
-		<header class="container">
-			<div class="row">
-				<div class="twelve columns">
-					<h2>
-						<a href="/">{{ .Site.Title }}</a>
-						<small>{{ .Site.Params.motto }}</small>
-					</h2>
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="twelve columns">
+						<h2>
+							<a href="/">{{ .Site.Title }}</a>
+							<small>{{ .Site.Params.tagline }}</small>
+						</h2>
+					</div>
 				</div>
 			</div>
 		</header>
@@ -39,7 +41,6 @@
 					<ul class="internal-nav">
 						<li><a href="/">Home</a></li>
 						<li><a href="/about">About</a></li>
-						<li><a href="/projects">Projects</a></li>
 					</ul>
 					<ul class="external-nav">
 						{{ if .Site.Params.githubLink }}
