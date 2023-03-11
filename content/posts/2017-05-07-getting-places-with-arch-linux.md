@@ -1,5 +1,5 @@
 ---
-date: 2018-09-17T15:21:22+02:00
+date: 2017-05-07T15:21:22+02:00
 title: Getting Places With Arch Linux
 description: How to install Arch Linux with LVM on LUKS and systemd-boot.
 tags: ["linux"]
@@ -7,7 +7,9 @@ tags: ["linux"]
 
 *LVM on LUKS Arch installation with systemd-boot*
 
-**NB**: This blog article it out of date, if you want to install Arch Linux using LVM on LUKS you should take a look [here](https://gist.github.com/OdinsPlasmaRifle/e16700b83624ff44316f87d9cdbb5c94).
+<aside class="warning">
+	<strong>NB</strong>: This blog article it out of date, if you want to install Arch Linux using LVM on LUKS you should take a look <a  href="https://gist.github.com/OdinsPlasmaRifle/e16700b83624ff44316f87d9cdbb5c94">here</a>.
+</aside>
 
 ## A New Dawn
 
@@ -17,8 +19,6 @@ me the necessary push to actually get to it. I'm not a a complete newbee when it
 Ubuntu for several years. In addition for the past 2 years my primary work environment has been Antergos, which is a 
 great Arch Linux derivative. However, even though I felt pretty comfortable with basic Linux usage I still approached 
 the task of installing Arch with a little trepidation. I'm happy to say that was a stupid mentality.
-
-<!--break-->
 
 One of my requirements for this install was to include drive encryption, which the default Arch installation guide 
 does not address (without extensive digging). After a couple hours of browsing guides and reading the phenomenal 

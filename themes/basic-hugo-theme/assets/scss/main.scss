@@ -1,24 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
-$primary: {{ .Site.Params.primaryColor | default "#02ba70" }};
-$secondary: {{ .Site.Params.secondaryColor | default "#63ffb4" }};
-$warningBoxColor: {{ .Site.Params.warningBoxColor | default "#f5e4f9" }};
-$noticeBoxColor: {{ .Site.Params.noticeBoxColor | default "#dfe5f4" }};
+$neongreen: #63ffb4;
+$green: #02ba70;
+$pink: #ff59f7;
 $white: #fff;
 $gray: #666;
-$black: #363636;
+$black: #242324;
 
 body {
 	color: $black;
-  font-family: 'Fira Sans', sans-serif;
+	background-color: $white;
+ 	font-family: 'Fira Sans', sans-serif;
+ 	font-size: 18px;
 }
 
 a {
-	color: $primary;
+	color: $green;
 	text-decoration: none;
 }
 a:hover {
-	color: $secondary;
+	color: $neongreen;
 	text-decoration: none;
 }
 
@@ -30,7 +31,7 @@ pre {
 blockquote {
 	margin: 0 0 2rem 0;
 	padding: 1rem 0rem 1rem 2rem;
-	border-left: 8px solid $primary;
+	border-left: 8px solid $neongreen;
 
 	p {
 		margin: 0;
@@ -46,12 +47,12 @@ blockquote {
 }
 
 button.button-primary {
-	background-color: $primary;
-	border-color: $primary;
+	background-color: $neongreen;
+	border-color: $neongreen;
 }
 button.button-primary:hover {
-	background-color: $secondary;
-	border-color: $secondary;
+	background-color: $green;
+	border-color: $green;
 }
 
 .container {
@@ -59,30 +60,27 @@ button.button-primary:hover {
 }
 
 header {
-	border-bottom: 1px solid lighten($gray, 50%);
+	border-bottom: 2px solid lighten($black, 15%);
+	background-color: $black;
 
 	h2 {
-		font-size: 35px;
-		padding: 2rem 0 0 0;
+		font-size: 32px;
+		padding: 1.5rem 0 0 0;
+		color: $white;
 
 		a {
-			color: $black;
-			text-decoration: underline;
-		}
-		a:hover {
-			color: $gray;
-			text-decoration: underline;
+			color: $white;
 		}
 	}
 
 	small {
 		font-size: 20px;
-		color: $gray;
+		color: $green;
 	}
 }
 
 nav.sidebar {
-	padding: 4rem 0;
+	padding: 6rem 0;
 	margin-bottom: 0;
 
 	img {
@@ -96,7 +94,7 @@ nav.sidebar {
 
 	.internal-nav {
 		list-style: none;
-		font-size: 28px;
+		font-size: 30px;
 		padding: 0 1rem;
 		text-align: right;
 
@@ -121,24 +119,25 @@ nav.sidebar {
 			color: $black;
 		}
 		a:hover {
-			color: $gray;
+			color: $neongreen;
 		}
 	}
 }
 
 main.content {
-	padding: 4rem 0;
+	padding: 6rem 0;
 	margin-bottom: 0;
 
 	aside {
 		padding: 1rem;
 		margin-bottom: 2rem;
+		border-radius: 10px;
 	}
 	aside.warning {
-		background-color: $warningBoxColor;
+		background-color: lighten($pink, 25%);
 	}
 	aside.notice {
-		background-color: $noticeBoxColor;
+		background-color: lighten($neongreen, 25%);
 	}
 
 	ul.pagination {
@@ -162,12 +161,14 @@ main.content {
 
 		article {
 			border-bottom: 1px solid lighten($gray, 50%);
+			padding-bottom: 1rem;
+			margin-bottom: 4rem;
 
 			a {
 				color: $black;
 			}
 			a:hover {
-				color: $gray
+				color: $gray;
 			}
 
 			.date {

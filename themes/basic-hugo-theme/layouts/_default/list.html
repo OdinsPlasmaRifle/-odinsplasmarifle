@@ -1,6 +1,7 @@
 {{ define "main" }}
+	{{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts").ByDate.Reverse }}
 	<ul class="posts">
-		{{ range (where .Paginator.Pages "Type" "!=" "page").ByDate.Reverse }}
+		{{ range $paginator.Pages }}
 		<li>
 			<article>
 				<a href="{{ .Permalink }}">
