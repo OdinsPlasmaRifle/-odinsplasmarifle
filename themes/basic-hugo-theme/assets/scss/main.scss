@@ -64,8 +64,9 @@ header {
 	background-color: $black;
 
 	h2 {
-		font-size: 32px;
-		padding: 1.5rem 0 0 0;
+		font-size: 30px;
+		padding: 1rem 0 0 0;
+		margin-bottom: 1rem;
 		color: $white;
 
 		a {
@@ -94,7 +95,7 @@ nav.sidebar {
 
 	.internal-nav {
 		list-style: none;
-		font-size: 30px;
+		font-size: 28px;
 		padding: 0 1rem;
 		text-align: right;
 
@@ -110,9 +111,10 @@ nav.sidebar {
 		list-style: none;
 		padding: 0 1rem;
 		text-align: right;
-		font-size: 30px;
+		font-size: 28px;
 
 		li {
+			padding: 0.4rem;
 			display: inline;
 		}
 		li a {
